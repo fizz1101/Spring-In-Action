@@ -3,16 +3,16 @@ package com.fizz.spring.part2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class CDPlayer implements MediaPlayer {
 
-    @Autowired
+    //@Autowired
     private CompactDisc cd;
 
-    /*@Autowired
+    @Autowired
     public CDPlayer(CompactDisc cd) {
         this.cd = cd;
-    }*/
+    }
 
     public void play() {
         cd .play();
