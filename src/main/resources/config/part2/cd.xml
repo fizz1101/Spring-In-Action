@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sgtPeppers" class="com.fizz.spring.part2.SgtPeppers"></bean>
+
+    <!--<bean id="blackDisc" class="com.fizz.spring.part2.BlackDisc">
+        <constructor-arg value="BlackDisc"></constructor-arg>
+        <constructor-arg value="Black"></constructor-arg>
+        &lt;!&ndash;<constructor-arg><null/></constructor-arg>&ndash;&gt;
+        <constructor-arg>
+            <list>
+                <value>Song 1</value>
+                <value>Song 2</value>
+                <value>Song 3</value>
+                <value>Song 4</value>
+                <value>Song 5</value>
+            </list>
+        </constructor-arg>
+    </bean>-->
+
+    <!--<bean id="cdPlayer" class="com.fizz.spring.part2.CDPlayer">
+        <constructor-arg ref="blackDisc"></constructor-arg>
+    </bean>-->
+
+    <bean id="blackDisc" class="com.fizz.spring.part2.BlackDisc"
+        c:artist="black"
+        c:title="BlackDisc"
+        c:tracks="null">
+    </bean>
+
+    <bean id="cdPlayer" class="com.fizz.spring.part2.CDPlayer"
+        c:cd-ref="blackDisc">
+    </bean>
+
+</beans>
