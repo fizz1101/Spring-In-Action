@@ -16,7 +16,7 @@ public class BlackDisc implements CompactDisc {
 
     public void play() {
         System.out.println("Playing " + title + " by " + artist);
-        if (tracks != null) {
+        if (tracks != null && tracks.size() > 0) {
             for (String track : tracks) {
                 System.out.println("-Track:" + track);
             }
