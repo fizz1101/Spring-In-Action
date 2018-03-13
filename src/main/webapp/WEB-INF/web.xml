@@ -1,7 +1,13 @@
-<!DOCTYPE web-app PUBLIC
+<?xml version="1.0" encoding="UTF-8"?>
+<!--EL表达式2.3版本，默认不解析EL标签-->
+<!--<!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >-->
+<!--EL表达式2.4版本，默认解析EL标签-->
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-<web-app>
   <display-name>Archetype Created Web Application</display-name>
 </web-app>
