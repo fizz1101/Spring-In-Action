@@ -8,6 +8,9 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+import org.thymeleaf.templateresolver.TemplateResolver;
 
 /**
  *DispatcherServlet配置
@@ -18,16 +21,55 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     /**
-     * 配置视图解析器
+     * 配置通用视图解析器
      * @return
      */
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setPrefix("/WEB-INF/jsp/");
         resolver.setSuffix(".jsp");
         resolver.setExposeContextBeansAsAttributes(true);
+        resolver.setOrder(0);   //值越小优先级越高
         return resolver;
+    }
+
+    /**
+     * thymeleaf模板视图解析器
+     * @param templateEngine
+     * @return
+     */
+    @Bean
+    public ViewResolver thymeleafViewResolver(SpringTemplateEngine templateEngine) {
+        ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
+        thymeleafViewResolver.setTemplateEngine(templateEngine);
+        return thymeleafViewResolver;
+    }
+
+    /**
+     * 模板引擎
+     * @param templateResolver
+     * @return
+     */
+    @Bean
+    public SpringTemplateEngine templateEngine(TemplateResolver templateResolver) {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+        templateEngine.setTemplateResolver(templateResolver);
+        return templateEngine;
+    }
+
+    /**
+     * 模板解析器
+     * @return
+     */
+    @Bean
+    public TemplateResolver templateResolver() {
+        TemplateResolver templateResolver = new TemplateResolver();
+        templateResolver.setPrefix("/WEB-INF/thymeleaf/");
+        templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode("HTML5");
+        templateResolver.setOrder(1);
+        return templateResolver;
     }
 
     /**
