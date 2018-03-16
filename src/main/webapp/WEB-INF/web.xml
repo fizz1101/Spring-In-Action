@@ -10,4 +10,82 @@
          http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
   <display-name>Archetype Created Web Application</display-name>
+
+  <!-- 使用xml配置DispatcherServlet和ContextLoaderListener Start -->
+  <!-- 设置根上下文配置文件 -->
+  <!--<context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:config/part7/root-context.xml</param-value>
+  </context-param>-->
+
+  <!-- 注册ContextLoaderListener -->
+  <!--<listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>-->
+
+  <!-- 注册DispatcherServlet -->
+  <!--<servlet>
+    <servlet-name>appServlet</servlet-name>
+    <servlet-class>
+      org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:config/part7/servlet-context.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>-->
+
+  <!-- 将DispatcherServlet映射到"/" -->
+  <!--<servlet-mapping>
+    <servlet-name>appServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>-->
+  <!-- 使用xml配置DispatcherServlet和ContextLoaderListener End -->
+
+
+  <!-- 使用java配置DispatcherServlet和ContextLoaderListener Start -->
+  <!-- 使用java配置 -->
+  <!--<context-param>
+    <param-name>contextClass</param-name>
+    <param-value>
+      org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+    </param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>com.fizz.spring.part5.config.RootConfig</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>appServlet</servlet-name>
+    <servlet-class>
+      org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <init-param>
+      <param-name>contextClass</param-name>
+      <param-value>
+        org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+      </param-value>
+    </init-param>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>com.fizz.spring.part5.config.WebConfig</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>appServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>-->
+  <!-- 使用java配置DispatcherServlet和ContextLoaderListener End -->
+
 </web-app>

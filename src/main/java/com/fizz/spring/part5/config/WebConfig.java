@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
-import org.thymeleaf.templateresolver.TemplateResolver;
+//import org.thymeleaf.templateresolver.TemplateResolver;
 
 /**
  *DispatcherServlet配置
@@ -39,30 +39,30 @@ public class WebConfig extends WebMvcConfigurerAdapter {
      * @param templateEngine
      * @return
      */
-    @Bean
+    /*@Bean
     public ViewResolver thymeleafViewResolver(SpringTemplateEngine templateEngine) {
         ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
         thymeleafViewResolver.setTemplateEngine(templateEngine);
         return thymeleafViewResolver;
-    }
+    }*/
 
     /**
      * 模板引擎
      * @param templateResolver
      * @return
      */
-    @Bean
+    /*@Bean
     public SpringTemplateEngine templateEngine(TemplateResolver templateResolver) {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
         return templateEngine;
-    }
+    }*/
 
     /**
      * 模板解析器
      * @return
      */
-    @Bean
+    /*@Bean
     public TemplateResolver templateResolver() {
         TemplateResolver templateResolver = new TemplateResolver();
         templateResolver.setPrefix("/WEB-INF/thymeleaf/");
@@ -70,7 +70,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         templateResolver.setTemplateMode("HTML5");
         templateResolver.setOrder(1);
         return templateResolver;
-    }
+    }*/
 
     /**
      * 配置静态资源处理
