@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+        http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+
+
+    <!-- 声明变量 -->
+    <!--<var name="customer" class="com.fizz.spring.part8.entity.Customer" />-->
+
+    <!-- 视图状态 -->
+    <!-- id:状态;view:视图名;model:绑定对象 -->
+    <!--<view-state id="welcome" view="welcome" model="customer" />-->
+
+
+    <!-- 行为状态 -->
+    <!--<action-state id="saveOrder">
+        <evaluate expression="pizzaFlowActions.saveOrder(order)" />
+        <transition to="thankYou" />
+    </action-state>-->
+
+
+    <!-- 决策状态 -->
+    <!--<decision-state id="check">
+        <if test="pizzaFlowActions.check(customer.zipCode)"
+            then="addCustomer"
+            else="deliveryWarning" />
+    </decision-state>-->
+
+
+    <!-- 子流程状态 -->
+    <!--<subflow-state id="order" subflow="pizza/order">
+        <input name="order" value="order" />
+        <transition on="orderCreated" to="payment" />
+    </subflow-state>-->
+
+
+    <!-- 结束状态 -->
+    <!--<end-state id="customerReady" />-->
+
+    <!-- 保护web流程 -->
+    <!--<view-state id="restricted">
+        <secured attributes="ROLE_ADMIN" match="all" />
+    </view-state>-->
+
+</flow>
