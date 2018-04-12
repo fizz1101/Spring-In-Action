@@ -7,6 +7,6 @@ import org.springframework.context.annotation.ImportResource;
 
 @Configuration
 @Import({CDPlayerConfig.class, CDConfig.class})
-@ImportResource("config/part2/cd.xml")
+//@ImportResource("config/part2/cd.xml")    //影响到后续组件扫描内容，故屏蔽之
 public class SoundSystemConfig {
 }
